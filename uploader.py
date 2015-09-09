@@ -2,6 +2,7 @@ import os
 import re
 import subprocess
 import time
+import sys
 
 for root, dirs, files in os.walk("./ready"):
 	for file in files:
@@ -12,3 +13,4 @@ for root, dirs, files in os.walk("./ready"):
 				open(os.path.join(root, file) + ".upload", 'a').close()
 				command = subprocess.Popen(['python', 'upload.py', file, date])
 				time.sleep(1)
+sys.exit()
